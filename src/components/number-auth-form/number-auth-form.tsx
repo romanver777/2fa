@@ -149,12 +149,12 @@ export const NumberAuthForm = ({ onBack }: { onBack?: () => void }) => {
             <Button
               onClick={handleRequestNewCode}
               disabled={
-                verifyMutation.isPending || (!!isInvalidCode && !isExpired)
+                requestNewCodeMutation.isPending || (!!isInvalidCode && !isExpired)
               }
               text={
-                verifyMutation.isPending
+                requestNewCodeMutation.isPending
                   ? "Loading..."
-                  : !verifyMutation.isPending && isExpired
+                  : !requestNewCodeMutation.isPending && isExpired
                   ? "Get new"
                   : ""
               }
