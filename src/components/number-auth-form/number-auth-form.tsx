@@ -18,11 +18,9 @@ export const NumberAuthForm = ({ onBack }: { onBack?: () => void }) => {
     onSuccess: (data) => {
       if (data.success) {
         setLoginSuccess(true);
-        console.log("Login successful! Token:", data.token);
       }
     },
     onError: (error: ApiError) => {
-      console.log("error", error.message);
       setIsInvalidCode(error.message);
       if (error.message === "Code expired") {
         setIsExpired(true);
@@ -39,7 +37,6 @@ export const NumberAuthForm = ({ onBack }: { onBack?: () => void }) => {
       setIsExpired(false);
     },
     onError: (error: ApiError) => {
-      console.log("error NewNumbers", error.message);
       setIsInvalidCode(error.message);
     },
   });
