@@ -20,7 +20,7 @@ export const Button = ({
       onClick={onClick && onClick}
       type={type}
       disabled={disabled}
-      className={`${styles.button} ${classname && styles[classname]}`}
+      className={`${styles.button} ${classname ? styles[classname] : ""}`}
     >
       {text}
     </button>
