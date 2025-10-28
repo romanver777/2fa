@@ -1,0 +1,13 @@
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding-block: 20px;
+}
+
+.name {
+  color: var(--color-b88);
+  font-size: 16px;
+  font-weight: 700;
+}

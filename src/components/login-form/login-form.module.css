@@ -1,0 +1,95 @@
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: var(--color-white);
+  padding: 32px;
+  border-radius: 6px;
+  box-shadow: 0 4px 4px 0 var(--color-b25);
+  width: 100%;
+  max-width: 440px;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--color-b88);
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.groupWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formGroup {
+  position: relative;
+}
+
+.inputWithIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 11px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 11px 8px 31px;
+  color: var(--color-b88);
+  border: 1px solid var(--color-d9d);
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 25px;
+  transition: 0.3s;
+}
+
+.input::placeholder {
+  color: var(--color-b45);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-blue);
+}
+
+.inputInvalid,
+.inputInvalid:focus {
+  border-color: var(--color-red);
+}
+
+.fieldError {
+  position: absolute;
+  bottom: -17px;
+  color: var(--color-red);
+  font-size: 12px;
+  display: block;
+}
+
+.errorMessage {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-red);
+  font-size: 12px;
+}

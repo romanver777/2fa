@@ -1,0 +1,62 @@
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-f5f);
+}
+
+.authForm {
+  position: relative;
+  background: var(--color-white);
+  padding: 32px;
+  border-radius: 6px;
+  box-shadow: 0 4px 4px 0 var(--color-b25);
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  color: var(--color-b88);
+  font-size: 24px;
+}
+
+.twofaDescription {
+  color: var(--color-b88);
+  margin-bottom: 24px;
+}
+
+.codeInputs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.codeInput {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  font-size: 24px;
+  border: 1px solid var(--color-d9d);
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.codeInput:focus {
+  outline: none;
+}
+
+.codeInputInvalid {
+  border-color: var(--color-red);
+}
+
+.codeError {
+  color: var(--color-red);
+  margin-bottom: 16px;
+  margin-top: -10px;
+  text-align: left;
+  font-size: 14px;
+}

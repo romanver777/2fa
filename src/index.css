@@ -1,0 +1,30 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --color-b88: rgba(0, 0, 0, 0.88);
+  --color-b45: rgba(0, 0, 0, 0.45);
+  --color-b25: rgba(0, 0, 0, 0.25);
+  --color-b04: rgba(0, 0, 0, 0.04);
+  --color-white: #ffffff;
+  --color-w87: rgba(255, 255, 255, 0.87);
+  --color-d9d: #d9d9d9;
+  --color-f5f: #f5f5f5;
+  --color-blue: #1617ff;
+  --color-red: #dc3545;
+
+  color: var(--color-w87);
+  background-color: var(--color-f5f);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

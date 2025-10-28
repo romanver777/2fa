@@ -1,0 +1,29 @@
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 8px;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button:disabled {
+  color: var(--color-b25);
+  background-color: var(--color-b04);
+  pointer-events: none;
+}
+
+.button:disabled:hover {
+  background-color: var(--color-blue);
+}

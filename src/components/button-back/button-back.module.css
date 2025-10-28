@@ -1,0 +1,19 @@
+.buttonBack {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.buttonBack:hover {
+  cursor: pointer;
+}
+
+.numberAuth {
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
