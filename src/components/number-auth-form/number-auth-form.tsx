@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import styles from "./number-auth-form.module.css";
 import { authApiMocks } from "../../api";
@@ -43,6 +43,12 @@ export const NumberAuthForm = ({ onBack }: { onBack?: () => void }) => {
 
   const isCodeComplete = code.every((digit) => digit !== "");
 
+  useEffect(() => {
+    if (!isCodeComplete && isExpired) {
+      setBtnFocused("newCodeBtn");
+    }
+  }, [isCodeComplete, isExpired]);
+
   const handleCodeChange =
     (index: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value;
@@ -72,7 +78,18 @@ export const NumberAuthForm = ({ onBack }: { onBack?: () => void }) => {
         const nextInput = document.getElementById(`code-${index + 1}`);
         nextInput?.focus();
       }
+
+      if (value && index === 5) {
+        setBtnFocused("loginBtn");
+      }
     };
+
+  const setBtnFocused = (id: string) => {
+    setTimeout(() => {
+      const btn = document.getElementById(id);
+      btn?.focus();
+    }, 10);
+  };
 
   const handleKeyDown =
     (index: number) => (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -132,6 +149,7 @@ export const NumberAuthForm = ({ onBack }: { onBack?: () => void }) => {
 
           {isCodeComplete && (
             <Button
+              id="loginBtn"
               onClick={handleSubmit}
               disabled={
                 verifyMutation.isPending || (!!isInvalidCode && !isExpired)
@@ -147,9 +165,11 @@ export const NumberAuthForm = ({ onBack }: { onBack?: () => void }) => {
           )}
           {!isCodeComplete && isExpired && (
             <Button
+              id="newCodeBtn"
               onClick={handleRequestNewCode}
               disabled={
-                requestNewCodeMutation.isPending || (!!isInvalidCode && !isExpired)
+                requestNewCodeMutation.isPending ||
+                (!!isInvalidCode && !isExpired)
               }
               text={
                 requestNewCodeMutation.isPending
